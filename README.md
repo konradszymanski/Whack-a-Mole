@@ -12,3 +12,5 @@ CSS Position:absolute , left and top  may also be helpful\
 Allow 1 second between, 10 turns\
 End by displaying the sum and average of the reaction times\
 (the time the mole was visible but not clicked)
+
+
