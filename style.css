@@ -16,7 +16,7 @@ body {
     display: grid;
     border: 1px solid white;
     text-align: center;
-    background-color: lightcoral;
+
 
 }
 
@@ -27,4 +27,13 @@ body {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.mole {
+    background-color: lightcoral;
+
+}
+
+.moleAlive {
+    background-color: black;
 }
