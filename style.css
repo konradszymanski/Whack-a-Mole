@@ -1,19 +1,30 @@
 body {
-    background-color: burlywood;
+    background-color: rgb(34, 153, 94);
 }
 
 .container {
     display: grid;
-    width: 400px;
-    height: 400px;
+    width: 60vw;
+    height: 60vh;
     /* // border: 1px solid black; */
-    margin: 100px auto;
+    margin: 30px auto;
     grid-template-columns: auto auto auto auto;
+    border: 1px solid white;
 }
 
 .grid-item {
     display: grid;
-    border: 1px solid black;
+    border: 1px solid white;
     text-align: center;
-    a
+    background-color: lightcoral;
+
+}
+
+.startBtn {
+    background-color: white;
+    color: rgb(34, 153, 94);
+    border: 1px solid white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
