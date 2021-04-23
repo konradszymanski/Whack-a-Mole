@@ -96,12 +96,15 @@ stop.addEventListener('click', stopBtn)
 
 slowBtn.addEventListener('click', function () {
     speed = 1500
+
 })
 mediumBtn.addEventListener('click', function () {
     speed = 1000
+
 })
 fastBtn.addEventListener('click', function () {
     speed = 500
+
 })
 
 
