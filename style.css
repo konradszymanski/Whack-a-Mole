@@ -66,6 +66,25 @@ button:hover {
     height: 70px;
 }
 
+@media only screen and (max-width: 600px) {
+    .flexElements {
+        height: 120px;
+    }
+
+    .gamleLayout {
+        width: 200;
+        height: 200;
+    }
+
+    .time p,
+    .score p {
+        margin: 10px;
+    }
+
+    ;
+
+}
+
 .time,
 .score {
     text-align: center;
@@ -113,8 +132,6 @@ button:hover {
     border-radius: 50px;
     margin: 5px;
 }
-
-
 
 .mole {
     background-color: transparent;
