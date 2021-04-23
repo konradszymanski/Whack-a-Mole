@@ -52,7 +52,7 @@ function count321() {
     }
 }
 
-function moveMole2() {
+function startGame() {
     count321go = setInterval(count321, 1000)
     document.getElementById('startLayout').style.display = 'none';
     document.querySelector('.layout').style.display = 'grid';
@@ -74,15 +74,17 @@ function countDown() {
 
     if (currentTime == 0) {
         clearInterval(countDownTimerId)
-        alert('Final score: ' + result)
+        alert('Final score:' + result)
     }
 }
 
 function stopBtn() {
     result = 0
+    timeLeft.textContent = 0
     currentTime = 60
-    clearInterval(moveMole)
+
     speed = 0
+    clearInterval(moveMole)
     clearInterval(countDown)
     document.getElementById('startLayout').style.display = 'flex';
     document.querySelector('.layout').style.display = 'none';
