@@ -6,46 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap" rel="stylesheet">
     <title>Whack a Mole</title>
 </head>
 
 <body>
 
-    <h2>Your score:</h2>
-    <h2 id="score">0</h2>
+    <!-- <h1>WHACK A MOLE!</h1> -->
+    <div class="flexElements">
+        <div class="score">
+            <p>SCORE:</p>
+            <p id="score">0</p>
 
-    <h2>Time Left:</h2>
-    <h2 id="time-left">60</h2>
+        </div>
+        <div class="time">
+            <p>TIME:</p>
+            <p id="time-left">60</p>
+        </div>
 
-    <button onclick="moveMole()">Start</button>
-    <button id="stop">Reset</button>
-
-    <h4>Select speed</h4>
-    <button id="slow">Slow</button>
-    <button id="medium">Medium</button>
-    <button id="fast">Fast</button>
-
-
-    <div class="container">
-        <div id='1' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='2' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='3' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='4' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='5' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='6' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='7' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='8' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='9' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='10' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='11' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='12' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='13' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='14' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='15' class="grid-item mole" onclick="gridClick(this.id)"></div>
-        <div id='16' class="grid-item mole" onclick="gridClick(this.id)"></div>
     </div>
-    <button id='startBtn' class='startBtn'>START</button>
+
+    <div id="startLayout" class='startLayout'>
+        <p class='title'>WHACK-A-MOLE</p>
+        <p>Select speed</p>
+        <button id="slow">SLOW</button>
+        <button id="medium">MEDIUM</button>
+        <button id="fast">FAST</button>
+        <p>and press start!</p>
+        <button onclick="moveMole()">Start</button>
+    </div>
+
+    <div class="layout">
+
+        <div class="gamleLayout container">
+
+            <div id='1' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='2' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='3' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='4' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='5' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='6' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='7' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='8' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='9' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='10' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='11' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='12' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='13' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='14' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='15' class="grid-item mole" onclick="gridClick(this.id)"></div>
+            <div id='16' class="grid-item mole" onclick="gridClick(this.id)"></div>
+        </div>
+        <button id="stop">RESET</button>
+        <!-- <button id='startBtn' class='startBtn'>START</button> -->
+    </div>
     <script src=" app.js"></script>
 </body>
 

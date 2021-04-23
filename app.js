@@ -1,13 +1,13 @@
 const squares = document.querySelectorAll('.grid-item')
 const mole = document.querySelector('.mole')
 const timeLeft = document.querySelector('#time-left')
-const score = document.querySelector('#score')
+let score = document.querySelector('#score')
 const stop = document.getElementById('stop')
 const slowBtn = document.getElementById('slow')
 const mediumBtn = document.getElementById('medium')
 const fastBtn = document.getElementById('fast')
 
-let speed = 3000
+let speed = 1500
 
 let result = 0
 let hitPosition
@@ -19,14 +19,16 @@ function randomSquare() {
         square.classList.remove('moleAlive')
     })
 
-    let randomSquare = squares[Math.floor(Math.random() * 15)]
+    let randomSquare = squares[Math.floor(Math.random() * 16)]
     randomSquare.classList.add('moleAlive')
 
     hitPosition = randomSquare.id
+
+    console.log(result)
 }
 
 squares.forEach(square => {
-    square.addEventListener('moleAlive', () => {
+    square.addEventListener('click', () => {
         if (square.id == hitPosition) {
             result++;
             score.textContent = result
@@ -38,7 +40,10 @@ squares.forEach(square => {
 function moveMole() {
     let timerID = null
     timerId = setInterval(randomSquare, speed)
-    countDownTimerId = setInterval(countDown, 1000)
+    countDownTimerId = setInterval(countDown, 1000);
+    document.getElementById('startLayout').style.display = 'none';
+    document.querySelector('.layout').style.display = 'grid';
+
 }
 
 function countDown() {
@@ -55,9 +60,10 @@ function stopBtn() {
     result = 0
     currentTime = 60
     clearInterval(moveMole)
-    alert('GAME STOPPED!')
     speed = 0
-    clearInterval(countDownTimerId)
+    clearInterval(countDown)
+    document.getElementById('startLayout').style.display = 'flex';
+    document.querySelector('.layout').style.display = 'none';
 
 }
 
@@ -80,9 +86,9 @@ fastBtn.addEventListener('click', function () {
 // const startButton = document.getElementById('startBtn');
 
 
-// function gridClick(id) {
-//     alert(id)
-// }
+function gridClick(id) {
+    console.log(id)
+}
 
 // const randomItems = () => {
 //     items.forEach(item => {

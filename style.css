@@ -1,39 +1,131 @@
 body {
     background-color: rgb(34, 153, 94);
+    background-image: url('/img/boldizsar-bednarik-AwwdfImDUeQ-unsplash.jpg');
+    background-repeat: repeat;
+    background-size: 50vw auto;
 }
 
-.container {
+h1,
+p,
+h4,
+button {
+    color: white;
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
+
+button {
+    color: green;
+    font-size: 30px;
+    padding: 10px;
+
+}
+
+button:hover {
+    background-color: yellow;
+}
+
+.title {
+    border-bottom: 3px solid white;
+    padding: 10px;
+
+}
+
+.startLayout {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: auto;
+    height: auto;
+    background-color: black;
+    position: absolute;
+    z-index: 999;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    border: 3px dashed white;
+    padding: 0 20px 10px 20px;
+
+}
+
+.startLayout p {
+    margin: 2px;
+}
+
+/* DISPLAY CLASSES */
+.layout {
+    display: none;
+}
+
+.flexElements {
+    display: flex;
+    justify-content: space-around;
+    height: 70px;
+}
+
+.time,
+.score {
+    text-align: center;
+}
+
+#time-left,
+#score {
+    font-size: 50px;
+}
+
+#stop {
+    width: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+
+}
+
+.startLayout button {
+    display: flex;
+    margin: 2px auto;
+    flex-direction: row;
+}
+
+
+.gamleLayout {
     display: grid;
-    width: 60vw;
-    height: 60vh;
+    width: 300px;
+    height: 300px;
     /* // border: 1px solid black; */
     margin: 30px auto;
     grid-template-columns: auto auto auto auto;
-    border: 1px solid white;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.gamleLayout {
+    transform: rotate(45deg);
 }
 
 .grid-item {
     display: grid;
     border: 1px solid white;
     text-align: center;
-
-
+    border-radius: 50px;
+    margin: 5px;
 }
 
-.startBtn {
-    background-color: white;
-    color: rgb(34, 153, 94);
-    border: 1px solid white;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 .mole {
-    background-color: lightcoral;
-
+    background-color: transparent;
 }
 
 .moleAlive {
-    background-color: black;
+
+    background-image: url('/img/favpng_pull-up-mole-fat-mole-cartoon-animation.png');
+    background-repeat: no-repeat;
+    transform: rotate(-45deg);
+    background-size: 65px;
+
 }
