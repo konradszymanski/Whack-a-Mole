@@ -36,13 +36,35 @@ squares.forEach(square => {
         }
     })
 })
+let count321go;
+let countOnStart = 4
+
+
+let counter321 = document.getElementById('countDownLayout');
+
+function count321() {
+    countOnStart--
+    counter321.textContent = countOnStart
+    if (countOnStart == 0) {
+        moveMole()
+        clearInterval(count321go)
+        counter321.style.display = 'none'
+    }
+}
+
+function moveMole2() {
+    count321go = setInterval(count321, 1000)
+    document.getElementById('startLayout').style.display = 'none';
+    document.querySelector('.layout').style.display = 'grid';
+    document.querySelector('.flexElements').style.display = 'flex';
+}
+
 
 function moveMole() {
     let timerID = null
     timerId = setInterval(randomSquare, speed)
     countDownTimerId = setInterval(countDown, 1000);
-    document.getElementById('startLayout').style.display = 'none';
-    document.querySelector('.layout').style.display = 'grid';
+
 
 }
 
@@ -52,7 +74,7 @@ function countDown() {
 
     if (currentTime == 0) {
         clearInterval(countDownTimerId)
-        alert('GAME OVER! Your final score is ' + result)
+        alert('Final score: ' + result)
     }
 }
 
@@ -64,6 +86,7 @@ function stopBtn() {
     clearInterval(countDown)
     document.getElementById('startLayout').style.display = 'flex';
     document.querySelector('.layout').style.display = 'none';
+    document.querySelector('.flexElements').style.display = 'none';
 
 }
 

@@ -61,7 +61,7 @@ button:hover {
 }
 
 .flexElements {
-    display: flex;
+    display: none;
     justify-content: space-around;
     height: 70px;
 }
@@ -77,11 +77,10 @@ button:hover {
 }
 
 #stop {
-    width: 100px;
+    width: 150px;
     margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+    position: relative;
+    top: 50px;
 
 }
 
@@ -128,4 +127,17 @@ button:hover {
     transform: rotate(-45deg);
     background-size: 65px;
 
+}
+
+#countDownLayout {
+    background-color: black;
+    text-align: center;
+    border-radius: 50px;
+    width: 200px;
+    height: auto;
+    font-size: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
 }
