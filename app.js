@@ -1,4 +1,4 @@
-const squares = document.querySelectorAll('.grid-item')
+const gridItems = document.querySelectorAll('.grid-item')
 const mole = document.querySelector('.mole')
 const timeLeft = document.querySelector('#time-left')
 let score = document.querySelector('#score')
@@ -6,28 +6,23 @@ const stop = document.getElementById('stop')
 const slowBtn = document.getElementById('slow')
 const mediumBtn = document.getElementById('medium')
 const fastBtn = document.getElementById('fast')
-
-let speed = 1500
-
+let speed = 1000
 let result = 0
 let hitPosition
-let currentTime = 60
+let currentTime = 5
 let countDownTimerId
 
+// POSITION AND GRID
 function randomSquare() {
-    squares.forEach(square => {
+    gridItems.forEach(square => {
         square.classList.remove('moleAlive')
     })
-
-    let randomSquare = squares[Math.floor(Math.random() * 16)]
+    let randomSquare = gridItems[Math.floor(Math.random() * 16)]
     randomSquare.classList.add('moleAlive')
-
     hitPosition = randomSquare.id
-
-    console.log(result)
 }
 
-squares.forEach(square => {
+gridItems.forEach(square => {
     square.addEventListener('click', () => {
         if (square.id == hitPosition) {
             result++;
@@ -36,10 +31,9 @@ squares.forEach(square => {
         }
     })
 })
+// COUNTER 321 FUNCTIONS
 let count321go;
 let countOnStart = 4
-
-
 let counter321 = document.getElementById('countDownLayout');
 
 function count321() {
@@ -51,14 +45,27 @@ function count321() {
         counter321.style.display = 'none'
     }
 }
+//COUNTER 
+function countDown() {
+    currentTime--
+    timeLeft.textContent = currentTime
 
+    if (currentTime == 0) {
+        clearInterval(countDownTimerId)
+        alert('Final score:' + result)
+        clearInterval(moveMole)
+        clearInterval(countDown)
+        clearInterval(timerId)
+    }
+
+}
+// START STOP GAME
 function startGame() {
     count321go = setInterval(count321, 1000)
     document.getElementById('startLayout').style.display = 'none';
     document.querySelector('.layout').style.display = 'grid';
     document.querySelector('.flexElements').style.display = 'flex';
 }
-
 
 function moveMole() {
     let timerID = null
@@ -68,21 +75,10 @@ function moveMole() {
 
 }
 
-function countDown() {
-    currentTime--
-    timeLeft.textContent = currentTime
-
-    if (currentTime == 0) {
-        clearInterval(countDownTimerId)
-        alert('Final score:' + result)
-    }
-}
-
 function stopBtn() {
     result = 0
     timeLeft.textContent = 0
     currentTime = 60
-
     speed = 0
     clearInterval(moveMole)
     clearInterval(countDown)

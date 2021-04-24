@@ -67,6 +67,7 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
+
     .flexElements {
         height: 120px;
     }
@@ -80,8 +81,6 @@ button:hover {
     .score p {
         margin: 10px;
     }
-
-    ;
 
 }
 
@@ -118,7 +117,7 @@ button:hover {
     margin: 30px auto;
     grid-template-columns: auto auto auto auto;
     border: 5px solid white;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .gamleLayout {
@@ -143,6 +142,11 @@ button:hover {
     background-repeat: no-repeat;
     transform: rotate(-45deg);
     background-size: 65px;
+
+}
+
+.moleAlive:active {
+    border: 1px dotted yellow;
 
 }
 
