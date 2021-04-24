@@ -9,6 +9,9 @@ const fastBtn = document.getElementById('fast')
 
 // START STOP LAYOUT
 const endGameLayout = document.querySelector('#finishLayout')
+
+
+
 let speed = 1000
 let result = 0
 let molePosition
@@ -34,7 +37,7 @@ gridItems.forEach(square => {
         }
     })
 })
-// COUNTER 321 FUNCTIONS
+// COUNTER 321
 let count321go;
 let countOnStart = 4
 let counter321 = document.getElementById('countDownLayout');
@@ -48,7 +51,7 @@ function count321() {
         counter321.style.display = 'none'
     }
 }
-//COUNTER 
+//TIMER
 function countDown() {
     currentTime--
     timeLeft.textContent = currentTime
