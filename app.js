@@ -6,6 +6,9 @@ const stop = document.getElementById('stop')
 const slowBtn = document.getElementById('slow')
 const mediumBtn = document.getElementById('medium')
 const fastBtn = document.getElementById('fast')
+
+// START STOP LAYOUT
+const endGameLayout = document.querySelector('#finishLayout')
 let speed = 1000
 let result = 0
 let molePosition
@@ -52,7 +55,10 @@ function countDown() {
 
     if (currentTime == 0) {
         clearInterval(countDownTimerId)
-        alert('Final score:' + result)
+        endGameLayout.style.display = 'flex'
+        // alert('Final score:' + result)
+        document.querySelector('#resuldId').textContent = result;
+
         clearInterval(moveMole)
         clearInterval(countDown)
         clearInterval(timerId)
@@ -86,6 +92,10 @@ function stopBtn() {
     document.querySelector('.layout').style.display = 'none';
     document.querySelector('.flexElements').style.display = 'none';
 
+}
+const tryAgain = () => {
+    endGameLayout.style.display = 'none';
+    document.getElementById('startLayout').style.display = 'flex';
 }
 
 stop.addEventListener('click', stopBtn)
