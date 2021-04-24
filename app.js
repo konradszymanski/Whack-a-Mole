@@ -8,7 +8,7 @@ const mediumBtn = document.getElementById('medium')
 const fastBtn = document.getElementById('fast')
 let speed = 1000
 let result = 0
-let hitPosition
+let molePosition
 let currentTime = 5
 let countDownTimerId
 
@@ -19,15 +19,15 @@ function randomSquare() {
     })
     let randomSquare = gridItems[Math.floor(Math.random() * 16)]
     randomSquare.classList.add('moleAlive')
-    hitPosition = randomSquare.id
+    molePosition = randomSquare.id
 }
 
 gridItems.forEach(square => {
     square.addEventListener('click', () => {
-        if (square.id == hitPosition) {
+        if (square.id == molePosition) {
             result++;
             score.textContent = result
-            hitPosition = null
+            molePosition = null
         }
     })
 })
