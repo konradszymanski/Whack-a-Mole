@@ -4,4 +4,4 @@ Generation.org project - reaction testing.
 
 
 
-[a link](https://konrad-whack-a-mole.netlify.app/)
+[Whack-a-mole game](https://konrad-whack-a-mole.netlify.app/)
