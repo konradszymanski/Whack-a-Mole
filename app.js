@@ -10,8 +10,6 @@ const fastBtn = document.getElementById('fast')
 // START STOP LAYOUT
 const endGameLayout = document.querySelector('#finishLayout')
 
-
-
 let speed = 1000
 let result = 0
 let molePosition
@@ -81,7 +79,6 @@ function moveMole() {
     timerId = setInterval(randomSquare, speed)
     countDownTimerId = setInterval(countDown, 1000);
 
-
 }
 
 function stopBtn() {
@@ -116,29 +113,9 @@ fastBtn.addEventListener('click', function () {
 
 })
 
-
-
-
 // const items = document.querySelectorAll('.grid-item');
 // const startButton = document.getElementById('startBtn');
-
 
 function gridClick(id) {
     console.log(id)
 }
-
-// const randomItems = () => {
-//     items.forEach(item => {
-//         item.classList.remove('moleAlive')
-//     })
-//     let randomItems = items[Math.floor(Math.random() * 16)]
-//     randomItems.classList.add('moleAlive')
-
-// }
-
-// const move = () => {
-
-//     setInterval(randomItems, 1000)
-// }
-
-// startButton.addEventListener('click', move)
