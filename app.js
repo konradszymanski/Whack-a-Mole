@@ -1,12 +1,11 @@
 const gridItems = document.querySelectorAll('.grid-item')
 const mole = document.querySelector('.mole')
 const timeLeft = document.querySelector('#time-left')
-let score = document.querySelector('#score')
 const stopBtn = document.getElementById('stop')
 const slowBtn = document.getElementById('slow')
 const mediumBtn = document.getElementById('medium')
 const fastBtn = document.getElementById('fast')
-
+let score = document.querySelector('#score')
 
 //layout
 const startLayout = document.getElementById('startLayout')
@@ -19,7 +18,8 @@ const endGameLayout = document.querySelector('#finishLayout')
 let speed = 1000
 let result = 0
 let molePosition
-let currentTime = 5
+let currentTime = 10
+let initialTime = currentTime
 let countDownTimerId
 
 //SHOW - HIDE LAYOUT
@@ -34,7 +34,7 @@ const hideLayout = () => {
     flexElements.style.display = 'flex';
 }
 // POSITION AND GRID
-function randomSquare() {
+const randomSquare = () => {
     gridItems.forEach(square => {
         square.classList.remove('moleAlive')
     })
@@ -57,9 +57,9 @@ let count321go;
 let countOnStart = 4
 let counter321 = document.getElementById('countDownLayout');
 
-function count321() {
+const count321 = () => {
     countOnStart--
-    counter321.textContent = countOnStart
+    counter321.textContent = countOnStart;
     if (countOnStart == 0) {
         moveMole()
         clearInterval(count321go)
@@ -67,7 +67,7 @@ function count321() {
     }
 }
 //TIMER
-function countDown() {
+const countDown = () => {
     currentTime--
     timeLeft.textContent = currentTime
 
@@ -75,29 +75,31 @@ function countDown() {
         clearInterval(countDownTimerId)
         endGameLayout.style.display = 'flex'
         document.querySelector('#resuldId').textContent = result;
-
+        currentTime = initialTime
         clearInterval(moveMole)
         clearInterval(countDown)
         clearInterval(timerId)
     }
-
 }
 
 // START STOP GAME
-function startGame() {
+const startGame = () => {
+    counter321.style.display = 'block';
+    countOnStart = 4;
+    timeLeft.textContent = initialTime;
     count321go = setInterval(count321, 1000)
     hideLayout()
 }
 
-function moveMole() {
+const moveMole = () => {
     let timerID = null
     timerId = setInterval(randomSquare, speed)
     countDownTimerId = setInterval(countDown, 1000);
 
 }
 
-function stopGame() {
-    result = 0
+const stopGame = () => {
+   // result = 0
     timeLeft.textContent = 0
     currentTime = 60
     speed = 0
@@ -107,6 +109,8 @@ function stopGame() {
 
 }
 const tryAgain = () => {
+    result = 0
+    score.textContent = 0
     endGameLayout.style.display = 'none';
     startLayout.style.display = 'flex';
 }
