@@ -2,10 +2,16 @@ const gridItems = document.querySelectorAll('.grid-item')
 const mole = document.querySelector('.mole')
 const timeLeft = document.querySelector('#time-left')
 let score = document.querySelector('#score')
-const stop = document.getElementById('stop')
+const stopBtn = document.getElementById('stop')
 const slowBtn = document.getElementById('slow')
 const mediumBtn = document.getElementById('medium')
 const fastBtn = document.getElementById('fast')
+
+
+//layout
+const startLayout = document.getElementById('startLayout')
+const layout = document.querySelector('.layout')
+const flexElements = document.querySelector('.flexElements')
 
 // START STOP LAYOUT
 const endGameLayout = document.querySelector('#finishLayout')
@@ -16,6 +22,17 @@ let molePosition
 let currentTime = 5
 let countDownTimerId
 
+//SHOW - HIDE LAYOUT
+const showLayout = ()=> {
+    startLayout.style.display = 'flex';
+    layout.style.display = 'none';
+    flexElements.style.display = 'none';
+}
+const hideLayout = () => {
+    startLayout.style.display = 'none';
+    layout.style.display = 'grid';
+    flexElements.style.display = 'flex';
+}
 // POSITION AND GRID
 function randomSquare() {
     gridItems.forEach(square => {
@@ -57,7 +74,6 @@ function countDown() {
     if (currentTime == 0) {
         clearInterval(countDownTimerId)
         endGameLayout.style.display = 'flex'
-        // alert('Final score:' + result)
         document.querySelector('#resuldId').textContent = result;
 
         clearInterval(moveMole)
@@ -66,12 +82,11 @@ function countDown() {
     }
 
 }
+
 // START STOP GAME
 function startGame() {
     count321go = setInterval(count321, 1000)
-    document.getElementById('startLayout').style.display = 'none';
-    document.querySelector('.layout').style.display = 'grid';
-    document.querySelector('.flexElements').style.display = 'flex';
+    hideLayout()
 }
 
 function moveMole() {
@@ -81,27 +96,25 @@ function moveMole() {
 
 }
 
-function stopBtn() {
+function stopGame() {
     result = 0
     timeLeft.textContent = 0
     currentTime = 60
     speed = 0
     clearInterval(moveMole)
     clearInterval(countDown)
-    document.getElementById('startLayout').style.display = 'flex';
-    document.querySelector('.layout').style.display = 'none';
-    document.querySelector('.flexElements').style.display = 'none';
+    showLayout()
 
 }
 const tryAgain = () => {
     endGameLayout.style.display = 'none';
-    document.getElementById('startLayout').style.display = 'flex';
+    startLayout.style.display = 'flex';
 }
 
-stop.addEventListener('click', stopBtn)
+stopBtn.addEventListener('click', stopGame)
 
 slowBtn.addEventListener('click', function () {
-    speed = 1500
+    speed = 1500;
 
 })
 mediumBtn.addEventListener('click', function () {
@@ -112,9 +125,6 @@ fastBtn.addEventListener('click', function () {
     speed = 500
 
 })
-
-// const items = document.querySelectorAll('.grid-item');
-// const startButton = document.getElementById('startBtn');
 
 function gridClick(id) {
     console.log(id)
